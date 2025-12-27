@@ -1,6 +1,6 @@
 [tools]
-rust = "1.85"
+rust = "1.92"
 
 [tasks.cleantest]
-run = "rm -rf test_artifacts"
+run = "rm -r test_artifacts"
 alias = 'ct'

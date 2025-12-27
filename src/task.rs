@@ -126,7 +126,7 @@ async fn fetch_valid_response(
 
 fn form_url(pack_num: u16) -> anyhow::Result<reqwest::Url> {
     match pack_num {
-        (1318..) | 124 | 267 | 415 | 884 => Ok(reqwest::Url::parse(&format!(
+        (1318..) | 5 | 124 | 267 | 415 | 479 | 884 => Ok(reqwest::Url::parse(&format!(
             "https://packs.ppy.sh/S{pack_num}%20-%20osu%21%20Beatmap%20Pack%20%23{pack_num}.zip"
         ))?),
         1300.. => Ok(reqwest::Url::parse(&format!(
@@ -147,7 +147,7 @@ mod url_validity {
     #[tokio::test]
     #[ignore]
     async fn test_valid_urls() {
-        let pack_num_limit: u16 = 1589;
+        let pack_num_limit: u16 = 1740;
         let http_client = reqwest::Client::new();
 
         for pack_num in 1..=pack_num_limit {
